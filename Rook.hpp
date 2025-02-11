@@ -39,7 +39,7 @@ public:
     *      and BOARD_LENGTH (not inclusive), then BOTH are set to -1 (regardless of being in-bounds or not).
     * @note Remember to construct the base-class as well using these parameters!
     */
-    Rook(const std::string& color, const int& row, const int& col, const bool& movingUp, const int& castle_moves_left);
+    Rook(const std::string& color, const int& row, const int& column, const bool& movingUp, const int& castle_moves_left);
 
     /**
     * @brief Determines if this rook can castle with the parameter Chess Piece

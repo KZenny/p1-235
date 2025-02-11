@@ -4,8 +4,9 @@
 // A source file that defines a class, ChessPiece that serves as a base class for the other chess pieces. It defines common attributes and behaviors.
 
 #include <iostream>
-#include <string>
-#include <cctype>
+#include <string> // for strings
+#include <cctype> // for toupper() and isalpha()
+#include <cstdlib> // for absolute value
 #include "ChessPiece.hpp"
 using namespace std;
 
@@ -131,9 +132,9 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     * If the supplied value is outside the board dimensions [0, BOARD_LENGTH),
     *  the ChessPiece is considered to be taken off the board, and its row AND column are set to -1 instead.
     */ 
-    void ChessPiece::setColumn(const int& column) {
-        if (column >= 0 && column < BOARD_LENGTH){
-            column_ = column;
+    void ChessPiece::setColumn(const int& row) {
+        if (row >= 0 && row < BOARD_LENGTH){
+            column_ = row;
         } else {
             row_ = -1;
             column_ = -1;

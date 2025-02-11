@@ -4,10 +4,10 @@
 // A source file that defines a Rook class, extending the ChessPiece class with the specical characteristics of a rook chess piece.
     
 #include <iostream>
-#include <string>
-#include <cctype>
-#include <cstdlib>
-#include "Rook.hpp"
+#include <string> // for strings
+#include <cctype> // for toupper() and isalpha()
+#include <cstdlib> // for absolute value
+#include "Rook.hpp" 
 using namespace std;
 
     /**
@@ -60,7 +60,7 @@ bool Rook::canCastle(const ChessPiece& piece) const {
     bool onBoard = (getRow() != -1) && (getColumn() != -1) && (piece.getRow() != -1) && (piece.getColumn() != -1);
     bool laterallyAdjacent = (getRow() == piece.getRow()) && (abs(getColumn() - piece.getColumn()) <= 1);
 
-    return (castle_moves_left_ > 0) && (getColor() == piece.getColor()) && onBoard && laterallyAdjacent;
+    return (castle_moves_left_ > 0) && (getColor() == piece.getColor()) && onBoard && laterallyAdjacent; //if all four conditions are met, these two pieces can castle together and returns true. Otherwise, return false
 }
     /**
     * @brief Gets the value of the castle_moves_left_

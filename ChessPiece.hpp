@@ -3,8 +3,6 @@
 // Date: 2/10/2025
 // A header file that declares a class, ChessPiece that serves as a base class for the other chess pieces. It contains common attributes and behaviors of the chess pieces.
 
-
-
 #ifndef CHESS_PIECE_HPP
 #define CHESS_PIECE_HPP
 #include <string>
@@ -39,7 +37,7 @@ public:
     *   If EITHER of the provided row or col are out-of-bounds, where the bounds are between 0 (inclusive)
     *      and BOARD_LENGTH (not inclusive), then BOTH are set to -1 (regardless of being in-bounds or not).
     */
-    ChessPiece(const std::string& color_, const int& row_ = -1, const int& column_ = -1, const bool& movingUp_ = false);
+    ChessPiece(const std::string& color, const int& row = -1, const int& column = -1, const bool& movingUp = false);
 
     /**
     * @brief Gets the color of the chess piece.
@@ -91,7 +89,7 @@ public:
     * If the supplied value is outside the board dimensions [0, BOARD_LENGTH),
     *  the ChessPiece is considered to be taken off the board, and its row AND column are set to -1 instead.
     */ 
-    void setColumn(const int& column);
+    void setColumn(const int& row);
 
     /**
     * @brief Sets the movingUp flag of the chess piece 

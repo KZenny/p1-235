@@ -4,8 +4,9 @@
 // A source file that defines a class, Pawn that serves as a subclass of ChessPiece. It defines special attributes and behaviors of a Pawn chesspiece.
 
 #include <iostream>
-#include <string>
-#include <cctype>
+#include <string> // for strings
+#include <cctype> // for toupper() and isalpha()
+#include <cstdlib> // for absolute value
 #include "Pawn.hpp"
 using namespace std;
 
