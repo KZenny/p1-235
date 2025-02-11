@@ -53,6 +53,7 @@ public:
     * @brief Toggles the double_jumpable_ flag of the Pawn
     * @post Sets the double_jumpable_ flag to opposite its current value
     */
+    
     void toggleDoubleJump();
 
     /**

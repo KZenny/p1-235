@@ -8,7 +8,6 @@
 #include <cctype> // for toupper() and isalpha()
 #include <cstdlib> // for absolute value
 #include "ChessPiece.hpp"
-using namespace std;
 
     /**
     * @brief Default Constructor : All values 
@@ -38,7 +37,7 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     *   If EITHER of the provided row or col are out-of-bounds, where the bounds are between 0 (inclusive)
     *      and BOARD_LENGTH (not inclusive), then BOTH are set to -1 (regardless of being in-bounds or not).
     */
-    ChessPiece::ChessPiece(const string& color, const int& row, const int& column, const bool& movingUp) : row_(-1), column_(-1), movingUp_(movingUp){
+    ChessPiece::ChessPiece(const std::string& color, const int& row, const int& column, const bool& movingUp) : row_(-1), column_(-1), movingUp_(movingUp){
         color_ = "";
         int colorLength = color.length();
         for (int i = 0; i < colorLength; i++){
@@ -60,7 +59,7 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     * @brief Gets the color of the chess piece.
     * @return std::string - The value stored in color_
     */
-    string ChessPiece::getColor() const {
+    std::string ChessPiece::getColor() const {
         return color_;
     }
 
@@ -96,8 +95,8 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     * @post The color_ member variable is updated to the parameter value in uppercase
     * @return True if the color was set. False otherwise.
      */
-    bool ChessPiece::setColor(const string& color) {
-        string allUpperColor = "";
+    bool ChessPiece::setColor(const std::string& color) {
+        std::string allUpperColor = "";
         int colorLength = color.length();
         for (int i = 0; i < colorLength; i++){
             if(!isalpha(color[i])){ //If the parameter color is not all-alphabetical characters, return false
@@ -145,8 +144,8 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     * @brief Sets the movingUp flag of the chess piece 
     * @param flag A const reference to an boolean representing whether the piece is now moving up or not
     */
-    void ChessPiece::setMovingUp(const bool& movingUp) {
-        movingUp_ = movingUp;
+    void ChessPiece::setMovingUp(const bool& flag) {
+        movingUp_ = flag;
     }
 
     /**
@@ -164,10 +163,10 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     */
     void ChessPiece::display() const{
     if(row_ != -1 && column_ != -1 && movingUp_){
-        cout << color_ << " piece at (" << row_ << "," << column_ << ") is moving UP" << endl;
+        std::cout << color_ << " piece at (" << row_ << "," << column_ << ") is moving UP" << std::endl;
     } else if (row_ != -1 && column_ != -1 && !movingUp_) {
-        cout << color_ << " piece at (" << row_ << "," << column_ << ") is moving DOWN" << endl;
+        std::cout << color_ << " piece at (" << row_ << "," << column_ << ") is moving DOWN" << std::endl;
     } else {
-        cout << color_ << " piece is not on the board" << endl;
+        std::cout << color_ << " piece is not on the board" << std::endl;
     }
   } 

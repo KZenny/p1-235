@@ -95,7 +95,7 @@ public:
     * @brief Sets the movingUp flag of the chess piece 
     * @param flag A const reference to an boolean representing whether the piece is now moving up or not
     */
-    void setMovingUp(const bool& movingUp);
+    void setMovingUp(const bool& flag);
 
     /**
     * @brief Displays the chess piece's information in the following format,

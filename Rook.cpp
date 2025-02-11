@@ -56,11 +56,10 @@ Rook::Rook(const std::string& color, const int& row, const int& column, const bo
     * @param ChessPiece A const reference to chess piece with which the rook may / may not be able to castle with
     * @return True if the rook can castle with the given piece. False otherwise.
     */
-bool Rook::canCastle(const ChessPiece& piece) const {
-    bool onBoard = (getRow() != -1) && (getColumn() != -1) && (piece.getRow() != -1) && (piece.getColumn() != -1);
-    bool laterallyAdjacent = (getRow() == piece.getRow()) && (abs(getColumn() - piece.getColumn()) <= 1);
-
-    return (castle_moves_left_ > 0) && (getColor() == piece.getColor()) && onBoard && laterallyAdjacent; //if all four conditions are met, these two pieces can castle together and returns true. Otherwise, return false
+bool Rook::canCastle(const ChessPiece& ChessPiece) const {
+    bool onBoard = (getRow() != -1) && (getColumn() != -1) && (ChessPiece.getRow() != -1) && (ChessPiece.getColumn() != -1);
+    bool laterallyAdjacent = (getRow() == ChessPiece.getRow()) && (abs(getColumn() - ChessPiece.getColumn()) <= 1);
+    return (castle_moves_left_ > 0) && (getColor() == ChessPiece.getColor()) && onBoard && laterallyAdjacent; //if all four conditions are met, these two pieces can castle together and returns true. Otherwise, return false
 }
     /**
     * @brief Gets the value of the castle_moves_left_
