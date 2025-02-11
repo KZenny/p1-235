@@ -5,10 +5,8 @@
     
 #include <iostream>
 #include <string> // for strings
-#include <cctype> // for toupper() and isalpha()
 #include <cstdlib> // for absolute value
 #include "Rook.hpp" 
-using namespace std;
 
     /**
     * @brief Default Constructor. By default, Rooks have 3 available castle moves to make

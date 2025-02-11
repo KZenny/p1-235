@@ -37,7 +37,7 @@ public:
     *   If EITHER of the provided row or col are out-of-bounds, where the bounds are between 0 (inclusive)
     *      and BOARD_LENGTH (not inclusive), then BOTH are set to -1 (regardless of being in-bounds or not).
     */
-    ChessPiece(const std::string& color, const int& row = -1, const int& column = -1, const bool& movingUp = false);
+    ChessPiece(const std::string& color, const int& row = -1, const int& column = -1, const bool& flag = false);
 
     /**
     * @brief Gets the color of the chess piece.

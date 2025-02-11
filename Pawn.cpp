@@ -5,10 +5,7 @@
 
 #include <iostream>
 #include <string> // for strings
-#include <cctype> // for toupper() and isalpha()
-#include <cstdlib> // for absolute value
 #include "Pawn.hpp"
-using namespace std;
 
     /**
     * @brief Default Constructor. All boolean values are default initialized to false.

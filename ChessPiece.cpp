@@ -6,7 +6,6 @@
 #include <iostream>
 #include <string> // for strings
 #include <cctype> // for toupper() and isalpha()
-#include <cstdlib> // for absolute value
 #include "ChessPiece.hpp"
 
     /**
@@ -37,7 +36,7 @@ ChessPiece::ChessPiece() : color_("BLACK"), row_(-1), column_(-1), movingUp_(fal
     *   If EITHER of the provided row or col are out-of-bounds, where the bounds are between 0 (inclusive)
     *      and BOARD_LENGTH (not inclusive), then BOTH are set to -1 (regardless of being in-bounds or not).
     */
-    ChessPiece::ChessPiece(const std::string& color, const int& row, const int& column, const bool& movingUp) : row_(-1), column_(-1), movingUp_(movingUp){
+    ChessPiece::ChessPiece(const std::string& color, const int& row, const int& column, const bool& flag) : row_(-1), column_(-1), movingUp_(flag){
         color_ = "";
         int colorLength = color.length();
         for (int i = 0; i < colorLength; i++){
